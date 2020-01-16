@@ -1,10 +1,18 @@
+
+
 function setup() {
-  // put setup code here
-  createCanvas(500,500);
-  background(255,0,255);
+  createCanvas(800, 800);
+
 }
 
+let noiseScale=0.02;
+
 function draw() {
-  // put drawing code here
-  ellipse(mouseX,mouseY,100,100);
+  background(0);
+  for (let x=0; x < width; x++) {
+    let noiseVal = noise((mouseX+x)*noiseScale, mouseY*noiseScale);
+    stroke(noiseVal*255);
+    line(width/2, height/2+noiseVal*80, 0, 0);
+     line(width, 0, width/2, height/2+noiseVal*80);
+  }
 }
