@@ -27,7 +27,7 @@ function draw() {
     stroke(noiseVal*255);
 
     line(x2, height, x2, height-noiseVal*(x2-width/2)*(x2/height));
-
+    line(width-x2, height, width-x2, height-noiseVal*(x2-width/2)*(x2/height));
    
   }
 }
